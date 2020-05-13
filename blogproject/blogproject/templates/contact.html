@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block extracontent %}
+
+<table>
+    <form action="{% url 'validateform' %}" method="post">
+    {% csrf_token %}
+    <tr><th>Contact Form</th></tr>
+    <tr><td>Full Name : </td><td>{{contactform.fullname}}</td></tr>
+    <tr><td>Email : </td><td>{{contactform.email}}</td></tr>
+    <tr><td>Phone : </td><td>{{contactform.phone}}</td></tr>
+    <tr><td>Message : </td><td>{{contactform.message}}</td></tr>
+    <tr><td><input type="submit" value='submit'/></td></tr>
+</form>
+</table>
+{% endblock %}
+
+ 

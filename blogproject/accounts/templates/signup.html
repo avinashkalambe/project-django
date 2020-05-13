@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block extracontent %}
+
+<div class="row justify-content-center">
+<div class="col-6">
+<div>
+{% if error %}
+    <h6>{{error}}</h6>
+{% endif %}
+</div>
+<div>
+    <form action="{% url 'signup' %}" method="POST">{% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Full Name</label>
+            <input type="text" name= "fullname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Full Name">
+            <small id="emailHelp" class="form-text text-muted">Enter any username you like</small>
+          </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" name= "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password1</label>
+          <input type="password" name= "password1" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password2</label>
+            <input type="password" name= "password2" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+  
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+    </div>
+</div>
+</div>    
+
+{% endblock %}
